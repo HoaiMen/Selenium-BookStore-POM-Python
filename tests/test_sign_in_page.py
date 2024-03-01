@@ -1,6 +1,8 @@
 
 import unittest
-from tests.base_test import BaseTest
+import sys
+sys.path.append('D:/Testing/test_selenium_cho_book_shop')
+from base_test import BaseTest
 from pages.main_page import *
 from pages.cart_page import *
 from utils.test_cases import test_cases
@@ -13,39 +15,37 @@ import time
 
 class TestSignInPage(BaseTest):
 
-    # def test_page_load(self):
-    #     print("\n" + str(test_cases(0)))
-    #     page = MainPage(self.driver)
-    #     self.assertTrue(page.check_page_loaded())
-
-    def test_search_item(self):
-        print("\n" + str(test_cases(1)))
+    def test_page_load(self):
+        print("\n" + str(test_cases(10)))
         page = MainPage(self.driver)
-        self.driver.save_screenshot('BeforeSearch.png')
-        search_result = page.search_item("Thỏ")
-        self.driver.save_screenshot('AfterSearch.png')
-        self.assertIn("/sanpham", search_result)
+        self.assertTrue(page.check_page_loaded())
+    
+    def test_sign_in_button(self):
+        print("\n" + str(test_cases(4)))
+        page = MainPage(self.driver)
+        login_page = page.click_sign_in_button()
+
+    def test_sign_up_button(self):
+        print("\n" + str(test_cases(3)))
+        page = MainPage(self.driver)
+        sign_up_page = page.click_sign_up_button()
+        self.assertIn("/register", sign_up_page.get_url())
 
 
-    # def test_sign_in_button(self):
-    #     print("\n" + str(test_cases(2)))
+    # def test_search_item(self):
+    #     print("\n" + str(test_cases(1)))
     #     page = MainPage(self.driver)
-    #     login_page = page.click_sign_in_button()
+    #     self.driver.save_screenshot('BeforeSearch.png')
+    #     search_result = page.search_item("Thỏ")
+    #     self.driver.save_screenshot('AfterSearch.png')
+    #     self.assertIn("/sanpham", search_result)
         
 
-
-    def test_sign_in_with_valid_user(self):
-        print("\n" + str(test_cases(3)))
-        main_page = MainPage(self.driver)
-        login_page = main_page.click_sign_in_button()
-        result = login_page.login_with_valid_user("valid_user")
-
-
-    # def test_sign_up_button(self):
-    #     print("\n" + str(test_cases(4)))
-    #     page = MainPage(self.driver)
-    #     sign_up_page = page.click_sign_up_button()
-    #     self.assertIn("/register", sign_up_page.get_url())
+    # def test_sign_in_with_valid_user(self):
+    #     print("\n" + str(test_cases(2)))
+    #     main_page = MainPage(self.driver)
+    #     login_page = main_page.click_sign_in_button()
+    #     result = login_page.login_with_valid_user("valid_user")
 
 
     # def test_sign_in_with_in_valid_user(self):
@@ -77,7 +77,6 @@ class TestSignInPage(BaseTest):
     #     cart = page.click_icon_cart()
     #     delete = page.click_icon_delete()
     
-
     # def test_add_cart(self):
     #     print("\n" + str(test_cases(5)))
     #     main_page = MainPage(self.driver)

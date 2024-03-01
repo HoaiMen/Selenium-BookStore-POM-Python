@@ -4,10 +4,10 @@ from selenium.webdriver.common.by import By
 # for maintainability we can seperate web objects by page name
 
 class MainPageLocators(object):
-    LOGO = (By.CLASS_NAME, 'Header_LogoImg__cvLy8')
+    LOGO = (By.CLASS_NAME, 'Header_LogoImg__p2hBQ')
     ACCOUNT = (By.CLASS_NAME, 'Header_ActionUser__AHnWb')
-    SIGNUP = (By.CLASS_NAME, 'signup')
-    LOGIN = (By.CLASS_NAME, 'Header_ActionUser__Cf44s')
+    SIGNUP = (By.CLASS_NAME, 'signUp_button')
+    LOGIN = (By.CLASS_NAME, 'Header_ActionUser__uW5Kh')
     SEARCH = (By.CLASS_NAME, 'input_search')
     SEARCH_BUTTON = (By.CLASS_NAME, 'Header_SearchBtn__5wt0m')
     # HELP_LINK = (By.XPATH, '//a[text()=\'Help\']')

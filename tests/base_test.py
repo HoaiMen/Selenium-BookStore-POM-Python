@@ -20,7 +20,7 @@ class BaseTest(unittest.TestCase):
         options.add_argument('--disable-gpu')
 
         # self.driver = webdriver.Chrome(options=options)
-        self.driver = webdriver.Chrome(ChromeDriverManager().install())
+        self.driver = webdriver.Chrome(options=options)
         # self.driver = webdriver.Firefox()
         self.driver.get("http://localhost:3000/")
 
